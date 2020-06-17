@@ -96,6 +96,7 @@ describe("Util (Pure function)", () => {
         expect(Util.factorial(0)).toBe(1);
         expect(Util.factorial(5)).toBe(120);
     });
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     test.skip("time (should be always √)", () => { });
 });
 

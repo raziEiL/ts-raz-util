@@ -1,8 +1,9 @@
 {
-    "name": "ts-lint-template",
+    "name": "ts-raz-util",
     "version": "1.0.0",
-    "description": "Personal template for future typescript projects",
+    "description": "Personal collection of useful javascript functions",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "jest --detectOpenHandles --no-cache ./*",
         "start": "node --unhandled-rejections=strict dist/index.js",
@@ -14,12 +15,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/raziEiL/ts-lint-template.git"
+        "url": "https://github.com/raziEiL/ts-raz-util.git"
     },
     "keywords": [],
     "author": "Denis Medvedev (raziEiL)",
     "license": "ISC",
-    "homepage": "https://github.com/raziEiL/ts-lint-template#readme",
+    "homepage": "https://github.com/raziEiL/ts-raz-util#readme",
+    "files": ["dist/**/*"],
     "jest": {
         "roots": [
             "<rootDir>/src"
