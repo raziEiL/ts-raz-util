@@ -1,4 +1,4 @@
-**ts-lint-template** is a personal template for future typescript projects.
+**ts-util** is a personal collection of fucntions.
 ----------
 Package configuration includes:  
 - [eslint](https://github.com/eslint/eslint)
