@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest --detectOpenHandles --no-cache ./*",
         "start": "node --unhandled-rejections=strict dist/index.js",
-        "build:prod": "npm run clear && tsc -p tsconfig.prod.json",
+        "build": "npm run clear && tsc -p tsconfig.prod.json",
         "build:debug": "npm run clear && tsc",
         "lint": "eslint -c .eslintrc.js --ext .js,.jsx,.ts,.tsx src",
         "lint:log": "eslint --no-color -o logs/lint.log -c .eslintrc.js --ext .js,.jsx,.ts,.tsx src",
