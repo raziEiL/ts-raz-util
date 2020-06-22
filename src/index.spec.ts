@@ -98,6 +98,29 @@ describe("Util (Pure function)", () => {
     });
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     test.skip("time (should be always √)", () => { });
+    test("dec2bin", () => {
+        expect(Util.dec2bin(8)).toBe("1000");
+        expect(Util.dec2bin(15)).toBe("1111");
+        expect(Util.dec2bin(16)).toBe("10000");
+        expect(Util.dec2bin(-1)).toBe("11111111111111111111111111111111");
+    });
+    test("bin2dec", () => {
+        expect(Util.bin2dec("1000")).toBe(8);
+        expect(Util.bin2dec("1111")).toBe(15);
+        expect(Util.bin2dec("10000")).toBe(16);
+        expect(Util.bin2dec("11111111111111111111111111111111")).toBe(-1);
+    });
+    test("bitRotate", () => {
+        expect(Util.bitRotate(8, 1, true)).toBe(4);
+        expect(Util.bitRotate(16, 2, true)).toBe(4);
+        expect(Util.bitRotate(283, 7, true)).toBe(110);
+        expect(Util.bitRotate(16, 1, false)).toBe(1);
+        expect(Util.bitRotate(17, 2, false)).toBe(6); // 1 0001 (bits len 5) > 100 0100 | 0010 = 100 0110 > 0 0110 (removes bits)
+        expect(Util.bitRotate(122, 7, false)).toBe(122);
+        expect(Util.bitRotate(125, 10, true)).toBe(95);
+        expect(Util.bitRotate(1022, 8, false)).toBe(767);
+        expect(Util.bitRotate(33, 6, true)).toBe(33);
+    });
 });
 
 describe("Util (Formatted function)", () => {

@@ -4,7 +4,7 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    extends: [
+    "extends": [
         // Базовый набор правил eslint
         'eslint:recommended',
         // Отключаем правила из базового набора
@@ -31,10 +31,18 @@ module.exports = {
         "no-null"
     ],
     "rules": {
-        "quotes": ["error", "double", { "avoidEscape": true }],
-        "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
-        "indent": ["error", 4, { "SwitchCase": 1 }],
-        "no-empty": ["error", { "allowEmptyCatch": true }],
+        "quotes": ["error", "double", {
+            "avoidEscape": true
+        }],
+        "semi": ["error", "always", {
+            "omitLastInOneLineBlock": true
+        }],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "no-empty": ["error", {
+            "allowEmptyCatch": true
+        }],
         "@typescript-eslint/ban-ts-ignore": "warn",
         "@typescript-eslint/no-use-before-define": "warn", // ["error", { "functions": false }],
         "@typescript-eslint/camelcase": "warn",
@@ -43,6 +51,7 @@ module.exports = {
         "unicorn/prevent-abbreviations": "off",
         "unicorn/catch-error-name": "off",
         "unicorn/explicit-length-check": "off",
+        "unicorn/no-nested-ternary": "warn",
         "no-null/no-null": "warn",
         // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
         "@typescript-eslint/tslint/config": [

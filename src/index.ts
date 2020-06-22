@@ -19,6 +19,14 @@ export const renameKey = (obj: any, oldKey: any, newKey: any) => { delete Object
 export const factorial = (n: number): number => n <= 1 ? 1 : n * factorial(n - 1); // 5! = 1*2*3*4*5=120
 export const time = () => { const time = new Date(); return `${time.getMinutes()}:${time.getSeconds()}:${time.getMilliseconds()}` };
 export const escapeJSON = (s: string) => s.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
+export const dec2bin = (dec: number) => (dec >>> 0).toString(2); // to uint32
+export const bin2dec = (bin: string) => Number.parseInt(bin, 2) >> 0; // to int32
+
+export function bitRotate(n: number, m: number, right: boolean) {
+    const bin = dec2bin(n);
+    m %= bin.length;
+    return bin2dec(right ? bin.slice(-m) + bin.slice(0, -m) : bin.slice(m) + bin.slice(0, m));
+}
 // Formatted function
 export const f_moduleName = (m: NodeModule): string => `[${moduleName(m)}]`;
 export const f_precentWhatLeft = (current: number, max: number): string => precentWhatLeft(current, max) + "%";
