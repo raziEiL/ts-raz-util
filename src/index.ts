@@ -21,6 +21,8 @@ export const time = () => { const time = new Date(); return `${time.getMinutes()
 export const escapeJSON = (s: string) => s.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
 export const dec2bin = (dec: number) => (dec >>> 0).toString(2); // to uint32
 export const bin2dec = (bin: string) => Number.parseInt(bin, 2) >> 0; // to int32
+export const shallowCopy = (obj: any) => Object.assign({}, obj); // copy top-level properties and methods
+export const deepCopy = (obj: any) => JSON.parse(JSON.stringify(obj)); // copy every object expect methods
 
 export function bitRotate(n: number, m: number, right: boolean) {
     const bin = dec2bin(n);

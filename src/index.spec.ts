@@ -121,6 +121,22 @@ describe("Util (Pure function)", () => {
         expect(Util.bitRotate(1022, 8, false)).toBe(767);
         expect(Util.bitRotate(33, 6, true)).toBe(33);
     });
+    test("shallowCopy", () => {
+        const obj = { a: 0, b: { c: 0 } };
+        const copy = Util.shallowCopy(obj);
+        obj.a = 1;
+        obj.b.c = 1;
+        expect(copy.a).toBe(0);
+        expect(copy.b.c).toBe(obj.b.c); // nested object is shared between the original(source) and the copy(target).
+    });
+    test("deepCopy", () => {
+        const obj = { a: 0, b: { c: 0 } };
+        const copy = Util.deepCopy(obj);
+        obj.a = 1;
+        obj.b.c = 1;
+        expect(copy.a).toBe(0);
+        expect(copy.b.c).toBe(0);
+    });
 });
 
 describe("Util (Formatted function)", () => {
