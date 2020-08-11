@@ -92,6 +92,13 @@ describe("Util (Pure function)", () => {
         Util.renameKey(obj, "old", "new");
         expect(obj).toEqual({ new: "Hi" });
     });
+    test("getKey", () => {
+        const obj = { a: "Hi", b: "Bye", c: { d: "Deep" } };
+        expect(Util.getKey(obj, "Hi")).toEqual("a");
+        expect(Util.getKey(obj, "Bye")).toEqual("b");
+        expect(Util.getKey(obj, "Deep")).toBeUndefined();
+        expect(Util.getKey(obj.c, "Deep")).toEqual("d");
+    });
     test("factorial", () => {
         expect(Util.factorial(0)).toBe(1);
         expect(Util.factorial(5)).toBe(120);

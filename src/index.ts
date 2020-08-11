@@ -16,6 +16,7 @@ export const precentWhatLeft = (current: number, max: number): number => Math.fl
 export const precentWhat = (current: number, max: number): number => Math.floor(current * 100 / max);
 export const sleep = (ms: number) => new Promise(res => { setTimeout(res, ms) });
 export const renameKey = (obj: any, oldKey: any, newKey: any) => { delete Object.assign(obj, { [newKey]: obj[oldKey] })[oldKey] };
+export const getKey = (obj: any, value: any) => Object.keys(obj).find(key => obj[key] === value);
 export const factorial = (n: number): number => n <= 1 ? 1 : n * factorial(n - 1); // 5! = 1*2*3*4*5=120
 export const time = () => { const time = new Date(); return `${time.getMinutes()}:${time.getSeconds()}:${time.getMilliseconds()}` };
 export const escapeJSON = (s: string) => s.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
