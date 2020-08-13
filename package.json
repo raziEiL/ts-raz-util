@@ -1,6 +1,6 @@
 {
     "name": "ts-raz-util",
-    "version": "1.0.2",
+    "version": "1.0.2.1",
     "description": "Personal collection of useful javascript functions",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
