@@ -1,3 +1,4 @@
+import { ForkOptions } from "child_process";
 import * as Util from ".";
 
 const match = (s: string) => Util.firstMatch(s, Util.REGEX_FILENAME);
@@ -143,6 +144,22 @@ describe("Util (Pure function)", () => {
         obj.b.c = 1;
         expect(copy.a).toBe(0);
         expect(copy.b.c).toBe(0);
+    });
+    test("generateRandomNums", () => {
+        const nums = Util.generateRandomNums(() => 1, 1, 0, 0);
+        expect(nums.length === 1 && nums[0] === 1).toBeTruthy();
+    });
+    test("getRandomArbitrary", () => {
+        const nums = Util.generateRandomNums(Util.getRandomArbitrary, 20, 0, 1)
+        expect(nums.includes(1)).toBeFalsy();
+    });
+    test("getRandomInt", () => {
+        const nums = Util.generateRandomNums(Util.getRandomInt, 20, 0, 1)
+        expect(nums.includes(1)).toBeFalsy();
+    });
+    test("getRandomInt inclusive", () => {
+        const nums = Util.generateRandomNums(Util.getRandomInt, 20, 0, 1, true);
+        expect(nums.includes(1)).toBeTruthy();
     });
 });
 

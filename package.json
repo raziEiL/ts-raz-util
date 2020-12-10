@@ -1,6 +1,6 @@
 {
-    "name": "ts-raz-util",
-    "version": "1.0.2.1",
+    "name": "@raz1el/util",
+    "version": "1.0.5",
     "description": "Personal collection of useful javascript functions",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -8,17 +8,21 @@
         "test": "jest --detectOpenHandles --no-cache ./*",
         "start": "node --unhandled-rejections=strict dist/index.js",
         "build": "npm run clear && tsc -p tsconfig.prod.json",
-        "build:debug": "npm run clear && tsc",
+        "build:dev": "npm run clear && tsc",
         "lint": "eslint -c .eslintrc.js --ext .js,.jsx,.ts,.tsx src",
         "lint:log": "eslint --no-color -o logs/lint.log -c .eslintrc.js --ext .js,.jsx,.ts,.tsx src",
-        "clear": "rm -rf dist logs"
+        "clear": "rm -rf dist logs",
+        "publish": "npm publish --access public"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/raziEiL/ts-raz-util.git"
     },
     "keywords": [],
-    "author": "Denis Medvedev (raziEiL)",
+    "author": {
+        "name": "Denis Medvedev (raziEiL)",
+        "email": "mr.raz4291@gmail.com"
+    },
     "license": "ISC",
     "homepage": "https://github.com/raziEiL/ts-raz-util#readme",
     "files": [
@@ -43,19 +47,19 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@types/jest": "^25.2.1",
-        "@types/node": "^13.13.12",
-        "@typescript-eslint/eslint-plugin": "^2.27.0",
-        "@typescript-eslint/eslint-plugin-tslint": "^2.27.0",
-        "@typescript-eslint/parser": "^2.27.0",
-        "eslint": "^6.8.0",
-        "eslint-plugin-import": "^2.20.2",
+        "@types/jest": "^26.0.18",
+        "@types/node": "^14.14.12",
+        "@typescript-eslint/eslint-plugin": "^4.9.1",
+        "@typescript-eslint/eslint-plugin-tslint": "^4.9.1",
+        "@typescript-eslint/parser": "^4.9.1",
+        "eslint": "^7.15.0",
+        "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-no-null": "^1.0.2",
         "eslint-plugin-typescript": "^0.14.0",
-        "eslint-plugin-unicorn": "^18.0.1",
-        "jest": "^25.3.0",
-        "ts-jest": "^25.3.1",
+        "eslint-plugin-unicorn": "^23.0.0",
+        "jest": "^26.6.3",
+        "ts-jest": "^26.4.4",
         "tslint": "^6.1.1",
-        "typescript": "^3.8.3"
+        "typescript": "^4.1.2"
     }
 }
